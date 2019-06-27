@@ -1,0 +1,177 @@
+================================================================
+						Create table							
+================================================================
+
+create table TriEkaPutra_Anggota(
+	id serial primary key,
+	NIK varchar(16) not null,
+	Nama varchar(40) not null,
+	Tanggal_Lahir date not null,
+	Tempat_lahir varchar(100) not null,
+	Alamat varchar(100) not null,
+	Jenis_Kelamin varchar(10) not null,
+	Tanggal_Aktif date not null,
+	Status_Aktif boolean not null
+)
+===============================================================
+						Insert Data
+===============================================================
+
+insert into TriEkaPutra_Anggota(
+	nik, 
+	nama, 
+	tanggal_lahir, 
+	tempat_lahir, 
+	alamat, 
+	jenis_kelamin, 
+	tanggal_aktif, 
+	status_aktif
+)
+values(
+	'1306071502960001',
+	'Anto',
+	'1990-09-30',
+	'Padang',
+	'Padang',
+	'Wanita',
+	'2016-03-20',
+	false
+)
+_______________________________________________________________
+insert into TriEkaPutra_Anggota(
+	nik, 
+	nama, 
+	tanggal_lahir, 
+	tempat_lahir, 
+	alamat, 
+	jenis_kelamin, 
+	tanggal_aktif, 
+	status_aktif
+)
+values(
+	'1306070308960001',
+	'Nova',
+	'1996-08-03',
+	'Bandung',
+	'Bandung',
+	'Wanita',
+	'2019-01-13',
+	false
+)
+_______________________________________________________________
+insert into TriEkaPutra_Anggota(
+	nik, 
+	nama, 
+	tanggal_lahir, 
+	tempat_lahir, 
+	alamat, 
+	jenis_kelamin, 
+	tanggal_aktif, 
+	status_aktif
+)
+values(
+	'1306070811960001',
+	'Wyna',
+	'1996-11-08',
+	'Bandung',
+	'Padang',
+	'Wanita',
+	'2019-01-13',
+	false
+)
+_______________________________________________________________
+===============================================================
+						Update Database
+===============================================================
+select * from TriEkaPutra_Anggota
+update triekaputra_anggota
+set alamat = 'Semarang'
+where id = 6;
+_______________________________________________________________
+update triekaputra_anggota
+set alamat = 'Bandung'
+where id = 5
+_______________________________________________________________
+update triekaputra_anggota
+set status_aktif = false
+where id = 8;
+_______________________________________________________________
+===============================================================
+					Delete from Database
+===============================================================
+delete from triekaputra_anggota
+where id = 8
+_______________________________________________________________
+delete from triekaputra_anggota
+where id = 10
+_______________________________________________________________
+===============================================================
+				Select data with conditional
+===============================================================
+select nama from triekaputra_anggota
+where id = 6
+_______________________________________________________________
+select alamat from triekaputra_anggota
+where tanggal_lahir < '01-01-1998'
+_______________________________________________________________
+select alamat from triekaputra_anggota
+where alamat != 'Jakarta'
+_______________________________________________________________
+select status_aktif from triekaputra_anggota
+where tanggal_lahir > '01-01-1997'
+_______________________________________________________________
+select alamat from triekaputra_anggota
+where tempat_lahir like '%ng'
+
+===============================================================
+					Select Data using limit
+===============================================================
+_______________________________________________________________
+select * from triekaputra_anggota 
+where tanggal_lahir > '1996-01-01'
+limit 4
+_______________________________________________________________
+
+select * from triekaputra_anggota 
+where jenis_kelamin = 'Wanita'
+limit 6
+_______________________________________________________________
+===============================================================
+				Select Data using limit & offset
+===============================================================
+select * from triekaputra_anggota 
+where alamat = 'Semarang'
+limit 2 offset 1
+_______________________________________________________________
+select * from triekaputra_anggota 
+where status_aktif = true
+limit 6 offset 1
+_______________________________________________________________
+===============================================================
+				Select Data using group
+===============================================================
+select tanggal_lahir from triekaputra_anggota
+group by tanggal_lahir
+_______________________________________________________________
+select nama from triekaputra_anggota
+where status_aktif = true
+order by nama asc
+_______________________________________________________________
+select * from triekaputra_anggota
+where status_aktif = false
+order by tanggal_lahir desc
+_______________________________________________________________
+===============================================================
+					Select query using distinct
+===============================================================
+select distinct nama, alamat from triekaputra_anggota
+_______________________________________________________________
+
+
+
+
+
+
+
+
+

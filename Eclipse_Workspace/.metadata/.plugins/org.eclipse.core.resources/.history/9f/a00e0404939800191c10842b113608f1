@@ -1,0 +1,33 @@
+package com.trieka.latihanmaven;
+
+import java.util.HashMap;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
+public class App 
+{
+    public static void main( String[] args )
+    {
+    	HashMap<String, String> map = new HashMap<String, String>();
+    	
+    	map.put("Latihan Maven", "Hello World");
+    	map.put("nama", "abc");
+    	map.put("alamat","jkads");
+    	map.put("telp","0899");
+    	
+//    	System.out.println(map.get("Latihan Maven"));
+//    	Gson gson = new Gson();
+    	Gson gson = new GsonBuilder().setPrettyPrinting().create();
+    	String json = gson.toJson(map);
+    	gson.toJson(map);
+    	System.out.println(json);
+    	
+//    	{
+//    		"nama":"abc",
+//    		"alamat":"cba",
+//    		"telp":"089890829"
+//
+//    	}
+    }
+}

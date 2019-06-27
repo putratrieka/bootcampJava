@@ -1,0 +1,5 @@
+package com.eksad.training.bean;
+
+public interface Perhitunga {
+
+}

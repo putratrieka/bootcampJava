@@ -1,0 +1,19 @@
+package com.trieka.latihanmaven;
+
+import java.util.HashMap;
+
+import com.google.gson.Gson;
+
+public class App 
+{
+    public static void main( String[] args )
+    {
+    	HashMap<String, String> map = new HashMap<String, String>();
+    	
+    	map.put("Latihan Maven", "Hello World");
+    	
+    	System.out.println(map.get("Latihan Maven"));
+    	Gson gson = new Gson();
+    	
+    }
+}
