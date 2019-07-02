@@ -2,6 +2,8 @@
 <section name="Workbench">
 	<section name="MavenProjectWizardLocationPage">
 		<list key="location">
+			<item value="E:\Workspace\Eclipse_Workspace\latihanjdbc\src\main\java\com\eksad\latihanjdbc\Employee.java"/>
+			<item value="E:\Workspace\Eclipse_Workspace\latihanjdbc"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>
@@ -25,13 +27,10 @@
 	</section>
 	<section name="Maven2ProjectWizardArchifactPage">
 		<list key="package">
-			<item value="com.trieka.latihanmaven"/>
 		</list>
 		<list key="groupId">
-			<item value="com.trieka"/>
 		</list>
 		<list key="artifactId">
-			<item value="latihanmaven"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>
@@ -42,7 +41,7 @@
 			<item value="[name]"/>
 		</list>
 		<list key="version">
-			<item value="0.0.1"/>
+			<item value="0.0.1-SNAPSHOT"/>
 		</list>
 	</section>
 	<section name="MavenProjectWizardArtifactPage">
