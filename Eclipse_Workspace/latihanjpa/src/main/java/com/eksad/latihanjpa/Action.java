@@ -34,9 +34,9 @@ public class Action {
 
 	@Bean
 	public Employee getById() {
-		Employee employee = employeeDAO.getById(4) ;
+		Employee employee = employeeDAO.getById(8) ;
 		
-		System.out.println("Get By Id = 4");
+		System.out.println("Get By Id = 8");
 		System.out.println("ID : " + employee.getId());
 		System.out.println("Name : " + employee.getName());
 		System.out.println("Address : " + employee.getAddress());

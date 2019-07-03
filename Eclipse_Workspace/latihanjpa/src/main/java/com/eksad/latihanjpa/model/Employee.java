@@ -8,6 +8,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity // membaca bahwa class ini suatu permodelan dari databasee
 @Table(name = "employee")
@@ -49,6 +51,7 @@ public class Employee {
 	public Date getDob() {
 		return dob;
 	}
+	@Temporal(TemporalType.DATE)
 	public void setDob(Date dob) {
 		this.dob = dob;
 	}
