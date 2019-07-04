@@ -10,7 +10,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.trieka.library.dao.AuthorDao;
 import com.trieka.library.dao.LibraryItemDao;
-import com.trieka.library.entity.LibraryItem;
 
 @SpringBootApplication
 public class LibraryApplication implements ApplicationRunner{
@@ -22,34 +21,25 @@ public class LibraryApplication implements ApplicationRunner{
 	@Autowired
 	private AuthorDao authorDao;
 	
+	@Autowired
 	private LibraryItemDao libraryItemDao;
 	
 	@Override
 	public void run(ApplicationArguments args) throws Exception{
-		List<LibraryItem> findName = libraryItemDao.findLibraryItemByName("Jack Fulan");
-		System.out.println(findName);
-//		findName.forEach(System.out::println);
-//		authorDao.findAll()
-//			.forEach(System.out::println);
-		// ========================= Find Library Item by Name =============================
-//		  libraryItem = new LibraryItem();
-//		  LibraryItem libraryItem = libraryItemDao.findLibraryItemByName("Jack Fulan");
-//				  .stream()
-//				  .findFirst()
-//				  .orElse(null);
-//			List<Object[]> totals = libraryItemDao.findLibraryItemByName("Jack Fulan");
-					
-//					for (Object[] total : totals) {
-//						System.out.println("id : " + total[0]);
-//						//System.out.println("total : " + total[1]);
-//					}
-//		  if (libraryItem != null) {
-////			  System.out.println(libraryItem);
-//			  libraryItemDao.findAll().forEach(System.out::println);
-//		  }
-		  
+		//authorDao.findAll().forEach(System.out::println);
+		//======================== Find Library Item by Name ==========================
+		System.out.println("======================== Find Library Item by Name =========================");
+		libraryItemDao.findLibraryItemByName("Jack Fulan").forEach(System.out::println);
+		//_____________________________________________________________________________
 		
-
+		//======================== Find Library Item by ISBN ==========================
+		System.out.println("======================== Find Library Item by Name =========================");
+		List<Object[]> isbn = libraryItemDao.findLibraryItemByIsbn("1245398461579");
+		
+		for (Object[] obj : isbn) {
+			System.out.println("Title : " + obj[0]);
+			System.out.println("Type Book : " + obj[1]);
+		}
 	}
 
 }
