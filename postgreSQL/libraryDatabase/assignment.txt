@@ -1,0 +1,21 @@
+Buatlah sebuah project yang berisi
+1. JPA mapping dari database "library"
+2. Method DAO yang berfungsi:
+   a. Mencari library_item berdasarkan nama
+   b. Mencari library_item dengan tipe Book berdasarkan isbn
+   c. Mencari library_item dengan tipe Book berdasarkan author (optional, nilai tambah)
+   d. Mencari total jumlah item per rack (optional, nilai tambah)
+3. Sebuah Spring Bean class (@Bean) yang berisi method untuk:
+   a. Menambah stok item di rak:
+      public void addStock(Rack rack, LibraryItem item, Integer quantity);
+      + Menambah quantity dari record terkait dari table rack_item
+      + Bila row belum ada create new
+   b. Mengurangi stok item di rak:
+      public void reduceStock(Rack rack, LibraryItem item, Integer quantity);
+      + Mengurangi quantity dari record terkait dari table rack_item
+      + Bila quantity setelah dikurangi == 0, hapus record
+      + Bila quantity setelah dikurangi < 0, kurangi stock dari rak lain agar impas (optional, nilai tambah)
+   c. Transfer/mutasi stok: (optional, nilai tambah)
+      public void transferStock(Rack from, Rack to, LibraryItem item, Integer quantity)
+      + Melakukan transfer stok antar rak
+      + Logic penambahan / pengurangan mengikuti method add & reduce stock
