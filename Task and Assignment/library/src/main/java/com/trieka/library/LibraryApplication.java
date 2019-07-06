@@ -56,27 +56,6 @@ public class LibraryApplication implements ApplicationRunner{
 //			System.out.println("Type Book : " + obj[1]);
 //		}
 //		
-//		//======================== Find Library Item by ISBN ==========================
-//		System.out.println("======================== Find Library Item by Name =========================");
-//		List<Object[]> authorId = libraryItemDao.findLibraryItemByAuthorId(2L);
-//		
-//		for (Object[] obj : authorId ){
-//			System.out.println("Title : " + obj[0]);
-//			System.out.println("Type Book : " + obj[1]);
-//		}
-		
-		//======================== Find Library Item by ISBN ==========================
-//		System.out.println("======================== Find Library Item by Name =========================");
-//		
-//		Long id = 2L;
-//		Integer rackQntt= rackItemDao.findQuantityByRackId(id);
-//		
-//		System.out.print("Jumlah item per rack untuk id ="+id + " : ");
-//		System.out.println(rackQntt);
-//		System.out.println("=============================================================================");
-
-//	}
-	
 	}
 
 
