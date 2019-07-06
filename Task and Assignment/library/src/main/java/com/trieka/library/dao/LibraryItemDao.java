@@ -10,26 +10,25 @@ import org.springframework.data.repository.query.Param;
 import com.trieka.library.entity.LibraryItem;
 
 public interface LibraryItemDao extends CrudRepository<LibraryItem, Long>{
+
+	
+//	Mencari library_item berdasarkan nama author
 	@Query("select li "
 		+ "from LibraryItem li "
-		+ "join li.author au "
+		//+ "join li.author au "
 		//+ "group by li.libraryItem.id "
-		+ "where au.name = :name")
+		+ "where li.author.name = :name")
 	public List<LibraryItem> findLibraryItemByName(@Param("name") String name);
 	//_________________________________________________________________________
-	
+//	Mencari library_item dengan tipe Book berdasarkan isbn
 	@Query("select li.title, "
 				+ "li.type "
 			+ "from LibraryItem li "
 			+ "where li.isbn = :isbn")
 	public List<Object[]> findLibraryItemByIsbn(@Param("isbn")String isbn);
-	
 	//_________________________________________________________________________
-	@Query("select li.title, "
-			+ "li.type "
-		+ "from LibraryItem li "
-		+ "where li.isbn = :isbn")
-	public List<Object[]> findLibraryItemByAuthor(@Param("isbn")String isbn);
+
+
 }
 /* ==== native query ====
 	Select * from library_item li

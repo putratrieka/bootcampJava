@@ -33,6 +33,7 @@ public class LibraryItem {
 	@JoinColumn(name = "author_id")
 	private Author author;
 	
+	
 	@Column
 	private String isbn;
 	
