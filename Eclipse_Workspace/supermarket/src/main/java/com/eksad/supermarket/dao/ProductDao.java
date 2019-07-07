@@ -1,4 +1,4 @@
-package com.eksad.supermarket.dao;
+ package com.eksad.supermarket.dao;
 
 import org.springframework.data.repository.CrudRepository;
 

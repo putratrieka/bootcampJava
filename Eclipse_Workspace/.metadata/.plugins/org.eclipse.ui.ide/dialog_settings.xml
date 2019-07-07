@@ -40,6 +40,9 @@
 		<item value="org.sonatype.m2e.mavenarchiver.feature:0.17.3.201905220530"/>
 	</list>
 	<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+		<item value="C:\Users\User-PC\Downloads\libraryItem2"/>
+		<item value="C:\Users\User-PC\Downloads\libraryItem"/>
+		<item value="C:\Users\User-PC\Downloads\LibraryItemBaru"/>
 		<item value="E:\Workspace\Eclipse_Workspace\latihanrest"/>
 		<item value="E:\Workspace\Eclipse_Workspace\latihanspringmvc"/>
 		<item value="E:\Workspace\Task and Assignment\library"/>

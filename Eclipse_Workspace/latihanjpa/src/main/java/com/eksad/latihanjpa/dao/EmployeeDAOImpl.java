@@ -2,6 +2,7 @@ package com.eksad.latihanjpa.dao;
 
 import java.util.List;
 
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
@@ -62,7 +63,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 		// return entityManager.createQuery("select e from Employee e where e.name like ?0 ", Employee.class) // Employee dibuat menjadi tipe data. e.name = memangggil employee.name. jd mengquery suat objek class
 		.setParameter(0, "%" + name + "%")
 		.getResultList();
-	
+//	
 	}
 
 }

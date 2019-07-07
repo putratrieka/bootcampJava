@@ -1,24 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="Prod"/>
+		<item key="selection" value="Find"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="find"/>
+			<item value="findB"/>
+			<item value="bean"/>
+			<item value="del"/>
+			<item value="trans"/>
+			<item value="hal"/>
+			<item value="say"/>
+			<item value="upda"/>
 			<item value="prod"/>
 			<item value="bea"/>
 			<item value="ty"/>
-			<item value="find"/>
 			<item value="type"/>
 			<item value="brand"/>
 			<item value="sea"/>
 			<item value="findby"/>
-			<item value="name"/>
-			<item value="save"/>
-			<item value="ajudan"/>
 		</list>
 		<list key="replacehistory">
 		</list>

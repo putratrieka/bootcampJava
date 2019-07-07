@@ -11,6 +11,7 @@ import com.trieka.library.entity.LibraryItem;
 import com.trieka.library.entity.Rack;
 
 public interface LibraryItemDao extends CrudRepository<LibraryItem, Long>{
+	
 	public List<LibraryItem>findByTitle(String title);
 
 	
@@ -42,6 +43,7 @@ public interface LibraryItemDao extends CrudRepository<LibraryItem, Long>{
 			+ "from LibraryItem li "
 			+ "where li.title = :title")
 	public List<Long> findIdByTitle(@Param("title") String title);
+
 
 }
 /* ==== native query ====

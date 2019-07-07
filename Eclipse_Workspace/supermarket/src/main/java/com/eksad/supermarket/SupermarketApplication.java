@@ -1,5 +1,7 @@
 package com.eksad.supermarket;
 
+import java.util.Date;
+import java.util.HashSet;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,9 +19,8 @@ import com.eksad.supermarket.dao.ProductDao;
 import com.eksad.supermarket.dao.ProductElectronicDao;
 import com.eksad.supermarket.dao.ProductGroceryDao;
 import com.eksad.supermarket.dao.TransactionDao;
-import com.eksad.supermarket.entity.Brand;
-import com.eksad.supermarket.entity.Chasier;
-import com.eksad.supermarket.entity.TransactionTotal;
+import com.eksad.supermarket.entity.Transaction;
+import com.eksad.supermarket.entity.TransactionDetail;
 
 @SpringBootApplication
 public class SupermarketApplication implements ApplicationRunner{
@@ -139,7 +140,7 @@ public class SupermarketApplication implements ApplicationRunner{
 			.forEach(System.out::println);
 */		
 //		============ One to Many ==============
-/*
+
 		Transaction transaction = new Transaction();
 		transaction.setDate(new Date());
 		transaction.setRemark("Test Transaction");
@@ -147,6 +148,7 @@ public class SupermarketApplication implements ApplicationRunner{
 		
 		TransactionDetail detail1 = new TransactionDetail();
 		detail1.setProduct(productDao.findById((long) 1).get());
+		//detail1.setProduct(productDao.findById((long) 1).get());
 		detail1.setQuantity(3);
 		detail1.setTransaction(transaction);
 		transaction.getDetail().add(detail1);
@@ -159,7 +161,7 @@ public class SupermarketApplication implements ApplicationRunner{
 		
 //		transactionDao.save(transaction);	
 		
-*/		
+	
 //		Transaction transaction = transactionDao.findById(2L).get();
 //		System.out.println("==== DONE GET TRANS ====");
 //		transaction.getDetail().size();
