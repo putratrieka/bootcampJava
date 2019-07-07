@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import lombok.Data;
@@ -17,11 +19,13 @@ public class RackItem {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@Column(name = "rack_id",nullable = false)
-	private Long rackId;
+	@ManyToOne
+	@JoinColumn(name = "rack_id",nullable = false)
+	private Rack rack;
 	
-	@Column(name = "library_item_id",nullable = false)
-	private Long libraryItemId;
+	@ManyToOne
+	@JoinColumn(name = "library_item_id",nullable = false)
+	private LibraryItem libraryItem;
 	
 	@Column(nullable = false)
 	private int quantity;

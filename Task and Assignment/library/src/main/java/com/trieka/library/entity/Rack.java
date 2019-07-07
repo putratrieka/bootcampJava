@@ -11,7 +11,7 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "rack")
+@Table(name = "rack")	
 public class Rack {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

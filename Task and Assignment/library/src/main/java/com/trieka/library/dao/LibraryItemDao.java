@@ -8,8 +8,10 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 
 import com.trieka.library.entity.LibraryItem;
+import com.trieka.library.entity.Rack;
 
 public interface LibraryItemDao extends CrudRepository<LibraryItem, Long>{
+	public List<LibraryItem>findByTitle(String title);
 
 	
 //	Mencari library_item berdasarkan nama author
@@ -28,6 +30,18 @@ public interface LibraryItemDao extends CrudRepository<LibraryItem, Long>{
 	public List<Object[]> findLibraryItemByIsbn(@Param("isbn")String isbn);
 	//_________________________________________________________________________
 
+//	Mencari library_item dengan tipe Book berdasarkan author (id)
+	@Query("select li.title, "
+			+ "li.type "
+		+ "from LibraryItem li "
+		+ "where li.author.id = :authorId")
+	public List<Object[]> findLibraryItemByAuthorId(@Param("authorId")Long authorId);
+	
+// Mencari id berdasarkan judul buku
+	@Query("select li.id "
+			+ "from LibraryItem li "
+			+ "where li.title = :title")
+	public List<Long> findIdByTitle(@Param("title") String title);
 
 }
 /* ==== native query ====
