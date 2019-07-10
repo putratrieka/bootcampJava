@@ -2,8 +2,8 @@ package com.eksad.supermarket.dao;
 
 import org.springframework.data.repository.CrudRepository;
 
-import com.eksad.supermarket.entity.Chasier;
+import com.eksad.supermarket.entity.Cashier;
 
-public interface ChasierDao extends CrudRepository<Chasier, Long>{
+public interface CashierDao extends CrudRepository<Cashier, Long>{
 
 }

@@ -9,16 +9,20 @@ import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.eksad.supermarket.dao.BrandDao;
-import com.eksad.supermarket.dao.ChasierDao;
+import com.eksad.supermarket.dao.CashierDao;
 import com.eksad.supermarket.dao.CustomerDao;
 import com.eksad.supermarket.dao.PersonDao;
 import com.eksad.supermarket.dao.ProductDao;
 import com.eksad.supermarket.dao.ProductElectronicDao;
 import com.eksad.supermarket.dao.ProductGroceryDao;
 import com.eksad.supermarket.dao.TransactionDao;
+import com.eksad.supermarket.entity.Person;
 import com.eksad.supermarket.entity.Transaction;
 import com.eksad.supermarket.entity.TransactionDetail;
 
@@ -42,7 +46,7 @@ public class SupermarketApplication implements ApplicationRunner{
 	private TransactionDao transactionDao;
 	
 	@Autowired
-	private ChasierDao chasierDao;
+	private CashierDao chasierDao;
 	
 	@Autowired
 	private CustomerDao customerDao;
@@ -56,16 +60,29 @@ public class SupermarketApplication implements ApplicationRunner{
 	@Override
 	@Transactional // agar method berjalan dalam satu koneksi, apabila satu method gagal, akan di rollback.
 	public void run(ApplicationArguments args) throws Exception{
+
+//		======================= Paging ============================
+		System.out.println(personDao.count());
+//		Sort.by("name")
+//		personDao.findAll(Sort.by("name")).forEach(System.out::println);
+//		menampilkan data dalam bentuk halaman (halaman ke, banyak data per halaman)
+		Page<Person> page = personDao.findAll(PageRequest.of(2, 10,Sort.by("name")));
+		
+		System.out.println("total element: " + page.getTotalElements());
+		System.out.println("total page: " + page.getTotalPages());
+		
+		
+		
 //		System.out.println("===================================================");
 //		System.out.println(transactionDao.findTotalItemByTransactionId((long) 1));
 //		
-		System.out.println("===================================================");
-		List<Object[]> totals = transactionDao.findTotalNominalByTransaction();
-		
-		for (Object[] total : totals) {
-			System.out.println("id : " + total[0]);
-			System.out.println("total : " + total[1]);
-		}
+//		System.out.println("===================================================");
+//		List<Object[]> totals = transactionDao.findTotalNominalByTransaction();
+//		
+//		for (Object[] total : totals) {
+//			System.out.println("id : " + total[0]);
+//			System.out.println("total : " + total[1]);
+//		}
 		
 		
 //		System.out.println("=============Product Electronic=============");
@@ -141,23 +158,23 @@ public class SupermarketApplication implements ApplicationRunner{
 */		
 //		============ One to Many ==============
 
-		Transaction transaction = new Transaction();
-		transaction.setDate(new Date());
-		transaction.setRemark("Test Transaction");
-		transaction.setDetail(new HashSet<TransactionDetail>());
-		
-		TransactionDetail detail1 = new TransactionDetail();
-		detail1.setProduct(productDao.findById((long) 1).get());
-		//detail1.setProduct(productDao.findById((long) 1).get());
-		detail1.setQuantity(3);
-		detail1.setTransaction(transaction);
-		transaction.getDetail().add(detail1);
-		
-		TransactionDetail detail2 = new TransactionDetail();
-		detail2.setProduct(productDao.findById((long) 2).get());
-		detail2.setQuantity(5);
-		detail2.setTransaction(transaction);
-		transaction.getDetail().add(detail2);
+//		Transaction transaction = new Transaction();
+//		transaction.setDate(new Date());
+//		transaction.setRemark("Test Transaction");
+//		transaction.setDetail(new HashSet<TransactionDetail>());
+//		
+//		TransactionDetail detail1 = new TransactionDetail();
+//		detail1.setProduct(productDao.findById((long) 1).get());
+//		//detail1.setProduct(productDao.findById((long) 1).get());
+//		detail1.setQuantity(3);
+//		detail1.setTransaction(transaction);
+//		transaction.getDetail().add(detail1);
+//		
+//		TransactionDetail detail2 = new TransactionDetail();
+//		detail2.setProduct(productDao.findById((long) 2).get());
+//		detail2.setQuantity(5);
+//		detail2.setTransaction(transaction);
+//		transaction.getDetail().add(detail2);
 		
 //		transactionDao.save(transaction);	
 		

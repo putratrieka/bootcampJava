@@ -1,6 +1,7 @@
 package com.trieka.library.dao;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -13,6 +14,7 @@ import com.trieka.library.entity.Rack;
 public interface LibraryItemDao extends CrudRepository<LibraryItem, Long>{
 	
 	public List<LibraryItem>findByTitle(String title);
+	
 
 	
 //	Mencari library_item berdasarkan nama author
